@@ -1,0 +1,46 @@
+{
+  "name": "create-vite-wework",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "create vite project with wework template",
+  "main": "index.js",
+  "bin": {
+    "create-vite-wework": "index.js"
+  },
+  "scripts": {
+    "t": "esno src/index.ts",
+    "b": "unbuild",
+    "pr": "npm run b && node index.js",
+    "rl": "bumpp",
+    "cl": "changelogen --output CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wmq-top/create-vite-wework.git"
+  },
+  "keywords": [
+    "tools"
+  ],
+  "author": "geeker_q",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wmq-top/create-vite-wework/issues"
+  },
+  "homepage": "https://github.com/wmq-top/create-vite-wework#readme",
+  "devDependencies": {
+    "bumpp": "^8.2.1",
+    "changelogen": "^0.4.1",
+    "cross-spawn": "^6.0.2",
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.6",
+    "prompts": "^2.4.2",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.18",
+    "@types/prompts": "^2.4.2",
+    "esno": "^0.16.3",
+    "node": "^18.13.0",
+    "unbuild": "^1.1.2"
+  }
+}

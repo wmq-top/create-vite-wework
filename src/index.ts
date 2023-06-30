@@ -1,10 +1,11 @@
 import prompts from "prompts"
-import { red, lightGreen, lightBlue, lightYellow, reset } from 'kolorist'
+import { red, lightGreen, lightBlue, lightYellow, reset, green } from 'kolorist'
 import { readFileSync, mkdirSync, writeFileSync, readdirSync } from 'node:fs'
 import { resolve, join } from 'node:path'
 import { fileURLToPath } from "node:url"
 import { copy } from './utils'
 import { configList } from './config/index'
+import { exit } from "node:process"
 
 
 const cwd = process.cwd()
@@ -71,6 +72,12 @@ async function initProcess() {
   pkg.dependencies[configList[framework].name] = configList[framework].baseVersion
   pkg.dependencies[configList[framework].icon] = configList[framework].iconVersion
   write('package.json', JSON.stringify(pkg, null, 2))
+
+  console.log(green(`Done! now run:\n`))
+  console.log(`  cd ${result.projectName}`)
+  console.log(`  npm i`)
+  console.log(`  npm run dev`)
+  exit(0)
 }
 
 initProcess().catch((e: Error) => {
